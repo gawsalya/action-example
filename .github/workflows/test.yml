@@ -15,4 +15,12 @@ jobs:
       - name: Install requirements
         run: pip install pytest
       - name: Run tests
-        run: pytest 
+
+      - name: Python Linter
+        uses: sunnysid3up/python-linter@master
+        with:
+         source: "/Coursework-Data-Engineering-Backend-Week-1"
+         mypy-options: "--ignore-missing-imports --show-error-codes"
+         pylint-options: "--rcfile=setup.cfg"
+         isort-options: "-w 100"
+         django: true
